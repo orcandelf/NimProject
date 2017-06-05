@@ -5,6 +5,7 @@ import edu.westga.cs6910.nim.model.Player;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -14,6 +15,9 @@ import javafx.scene.layout.Pane;
 /**
  * Defines a GUI for the 1-pile Nim game.
  * This class was started by CS6910
+ * 
+ * @author Diane Ela
+ * @version Jun 5, 2017
  * 
  */
 public class NimPane extends BorderPane {
@@ -38,22 +42,48 @@ public class NimPane extends BorderPane {
 		
 		this.pnContent = new BorderPane();
 		
-		this.addFirstPlayerChooserPane(theGame);		
+		this.addFirstPlayerChooserPane(theGame);
 		
-		// TODO: 1. Using the 'first player chooser pane' as a guide
-		//			Create an HBox with the appropriate style, then
-		//			make a human player pane and add it to the HBox.
-		//			Finally add the HBox to the content pane	
+		/*
+		 * Added human player information
+		 */
+		this.addHumanPlayerChooserPane(theGame);
 		
-		// TODO: 2. Using the other panes as a guide, create
-		//			and add a status pane	
+		/*
+		 * Added status pane information
+		 */		
+		this.addStatusPane(theGame);
 		
-		// TODO: 3. Using the other panes as a guide, create
-		//			and add a computer pane
+		/*
+		 * Added computer player information
+		 */		
+		this.addComputerPlayerChooserPane(theGame);
 
 		this.setCenter(this.pnContent);
 	}
 
+	private void addHumanPlayerChooserPane(Game theGame) {
+		HBox leftBox = new HBox();
+		leftBox.getStyleClass().add("pane-border");
+		leftBox.getChildren().add(this.pnHumanPlayer);
+		this.pnContent.setLeft(leftBox);
+	}
+	
+	private void addStatusPane(Game theGame) {
+		HBox centerBox = new HBox();
+		centerBox.getStyleClass().add("pane-border");
+		this.pnGameInfo = new StatusPane(theGame);
+		centerBox.getChildren().add(this.pnGameInfo);
+		this.pnContent.setCenter(centerBox);
+	}
+	
+	private void addComputerPlayerChooserPane(Game theGame) {
+		HBox rightBox = new HBox();
+		rightBox.getStyleClass().add("pane-border");
+		rightBox.setMinWidth(40.0);
+		this.pnContent.setRight(rightBox);
+	}
+	
 	private void addFirstPlayerChooserPane(Game theGame) {
 		HBox topBox = new HBox();
 		topBox.getStyleClass().add("pane-border");	
@@ -72,7 +102,7 @@ public class NimPane extends BorderPane {
 		private Game theGame;
 		private Player theHuman;
 		private Player theComputer;
-
+		
 		private NewGamePane(Game theGame) {
 			this.theGame = theGame;
 			
@@ -88,13 +118,26 @@ public class NimPane extends BorderPane {
 			this.radHumanPlayer = new RadioButton(this.theHuman.getName() + " first");	
 			this.radHumanPlayer.setOnAction(new HumanFirstListener());
 			
-			// TODO: Instantiate the computer player button and set 
-			//		its action listener.
+			/*
+			 * Instantiates the computer player
+			 */
 			
-			// TODO: Create a ToggleGroup and add the 2 radio buttons to it.
+			this.radComputerPlayer = new RadioButton(this.theComputer.getName() + " first");
+			this.radComputerPlayer.setOnAction(new ComputerFirstListener());
 			
-			// TODO: Add the 2 radio buttons to this pane.
-		
+			/*
+			 * Added a new toggle group and added the radio buttons to it
+			 */
+			
+			ToggleGroup theToggles = new ToggleGroup();
+			this.radHumanPlayer.setToggleGroup(theToggles);
+			this.radComputerPlayer.setToggleGroup(theToggles);
+			
+			/*
+			 * Added the radio buttons to this pane
+			 */
+			add(this.radComputerPlayer, 2, 1);
+			add(this.radHumanPlayer, 1, 1);
 		}
 		
 		/* 
@@ -125,9 +168,11 @@ public class NimPane extends BorderPane {
 			@Override
 			public void handle(ActionEvent event) {
 				NimPane.this.pnChooseFirstPlayer.setDisable(true);
-				// TODO: Enable the human player pane and start a game
-				//		 with the human playing first.
-
+				/*
+				 * Enables the human player and starts a new game with human going first
+				 */
+				NimPane.this.pnHumanPlayer.setDisable(false);
+				NimPane.this.theGame.startNewGame(NewGamePane.this.theHuman);
 			}
 		}
 	}
