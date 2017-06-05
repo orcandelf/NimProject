@@ -65,6 +65,7 @@ public class NimPane extends BorderPane {
 	private void addHumanPlayerChooserPane(Game theGame) {
 		HBox leftBox = new HBox();
 		leftBox.getStyleClass().add("pane-border");
+		this.pnHumanPlayer = new HumanPane(theGame);
 		leftBox.getChildren().add(this.pnHumanPlayer);
 		this.pnContent.setLeft(leftBox);
 	}
@@ -80,7 +81,8 @@ public class NimPane extends BorderPane {
 	private void addComputerPlayerChooserPane(Game theGame) {
 		HBox rightBox = new HBox();
 		rightBox.getStyleClass().add("pane-border");
-		rightBox.setMinWidth(40.0);
+		this.pnComputerPlayer = new ComputerPane(theGame);
+		rightBox.getChildren().add(this.pnComputerPlayer);
 		this.pnContent.setRight(rightBox);
 	}
 	
