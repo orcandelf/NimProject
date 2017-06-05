@@ -1,0 +1,131 @@
+/* General formatting */
+* {
+	box-sizing: border-box;
+}
+
+/* Older browser compatibility */
+header, nav, main, footer {
+	display: block;
+}
+
+main {
+	padding: 2em;
+	display: block;
+	margin-left: 2em;
+	padding-top: 1em;
+	text-align: justify;
+}
+
+footer {
+	padding: 2em;
+	display: block;
+	margin-left: 2em;
+	padding-top: 1em;
+}
+
+body {
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	width: 1000px;
+	min-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	border: 1px solid #000000;
+	border-radius: 20px;
+	box-shadow: 10px 10px 5px #CBCBCB;
+}
+
+h1 {
+	font-size: 26px;
+	font-weight: bold;
+	margin-bottom: 0px;
+	margin-left: 10px;
+}
+
+h2 {
+	font-size: 22px;
+	font-weight: bold;
+	margin: 0px;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 45px;
+}
+
+table {
+	width: 40%;
+	border: 1px solid #D2D2D2;
+	border-collapse: collapse;
+	margin-bottom: 1em;
+	margin: auto;
+}
+
+td, th {
+	padding: 1em;
+	border: 1px solid #D2D2D2;
+	text-align: center;
+}
+
+th {
+	background: #D2D2D2;
+	color: #000000;
+}
+
+img {
+	width: 40%;
+	max-width: 300px;
+	margin: 30px;
+
+}
+
+img.rounded {
+	border-radius: 20px;
+	box-shadow: 5px 5px 3px #CBCBCB;
+}
+
+img.larger {
+	width: 800px;
+	min-width: 600px;
+}
+
+a {
+	color: #000000;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.p-begin {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+.nim-table {
+	border-collapse: collapse;
+	width: 50%;
+	max-width: 400px;
+	border: none;
+	margin: 20px;
+}
+
+.nim-table .no-fill {
+	background-color: #FFFFFF;
+	border-collapse: collapse;
+	border: none;
+}
+
+.nim-table .fill {
+	background-color: #000000;
+	border: 1px solid #FFFFFF;
+}
+
+.nim-table .empty {
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+}
