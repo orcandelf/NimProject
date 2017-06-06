@@ -44,30 +44,24 @@ public class NimPane extends BorderPane {
 		
 		this.addFirstPlayerChooserPane(theGame);
 		
-		// TODO: 1. Using the 'first player chooser pane' as a guide
+		// TODO: !1. Using the 'first player chooser pane' as a guide
 		//			Create an HBox with the appropriate style, then
 		//			make a human player pane and add it to the HBox.
 		//			Finally add the HBox to the content pane
 		
-		/*
-		 * Adds the human player to the pane
-		 */
+		//Adds the human player to the pane
 		this.addHumanPlayerChooserPane(theGame);
 		
-		// TODO: 2. Using the other panes as a guide, create
+		// TODO: !2. Using the other panes as a guide, create
 		//			and add a status pane
-		
-		/*
-		 * Adds the status pane
-		 */
+				
+		//Adds the status pane
 		this.addStatusPane(theGame);
 		
-		// TODO: 3. Using the other panes as a guide, create
+		// TODO: !3. Using the other panes as a guide, create
 		//			and add a computer pane
 		
-		/*
-		 * Adds the computer player to the pane
-		 */
+		//Adds the computer player to the pane
 		this.addComputerPlayerChooserPane(theGame);
 
 		this.setCenter(this.pnContent);
@@ -140,14 +134,14 @@ public class NimPane extends BorderPane {
 			this.radHumanPlayer = new RadioButton(this.theHuman.getName() + " first");	
 			this.radHumanPlayer.setOnAction(new HumanFirstListener());
 			
-			// TODO: Instantiate the computer player button and set 
+			// TODO: !Instantiate the computer player button and set 
 			//		its action listener.
 			
 			// Instantiates the computer player and sets action listener
 			this.radComputerPlayer = new RadioButton(this.theComputer.getName() + " first");
 			this.radComputerPlayer.setOnAction(new ComputerFirstListener());
 			
-			// TODO: Create a ToggleGroup and add the 2 radio buttons to it.
+			// TODO: !Create a ToggleGroup and add the 2 radio buttons to it.
 			
 			/*
 			 * Adds a toggle group with the two radio buttons to determime the first player
@@ -156,7 +150,7 @@ public class NimPane extends BorderPane {
 			this.radHumanPlayer.setToggleGroup(theToggles);
 			this.radComputerPlayer.setToggleGroup(theToggles);
 			
-			// TODO: Add the 2 radio buttons to this pane.
+			// TODO: !Add the 2 radio buttons to this pane.
 						
 			//Adds the radio buttons to the pane
 			add(this.radComputerPlayer, 2, 1);
@@ -192,12 +186,10 @@ public class NimPane extends BorderPane {
 			public void handle(ActionEvent event) {
 				NimPane.this.pnChooseFirstPlayer.setDisable(false);
 				
-				// TODO: Enable the human player pane and start a game
+				// TODO: !Enable the human player pane and start a game
 				//		 with the human playing first.
-				
-				/*
-				 * Enables the human player and starts a new game with the human player going first
-				 */
+
+				//Enables the human player and starts a new game with the human player going first
 				NimPane.this.pnHumanPlayer.setDisable(false);
 				NimPane.this.theGame.startNewGame(NewGamePane.this.theHuman);
 			}
