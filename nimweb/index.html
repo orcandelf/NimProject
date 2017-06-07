@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+<title>Nim - Instructions</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device=width, initial-scale=1.0">
+<link rel="stylesheet" href="nim.css">
+<!--[if lt IE9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+	</script>
+	<![endif]-->
+</head>
+
+<body>
+	<div>
+		<header>
+			<h1>Shall We Play a Game?</h1>
+		</header>
+
+		<main>
+		<h2>Nim, A Game of Mathmatical Proportions</h2>
+		<h3>Welcome Mathmeticians!</h3>
+		<p>
+			<span class="p-begin">W</span>hat?" you say. "I'm here to play Nim,
+			not solve math problems!"
+		</p>
+		<p>Today is your lucky day! Nim is not only a fun game to play
+			with your friends, it is a game seeped in mathmatical lore!</p>
+		<h3>History</h3>
+		<p>
+			<span class="p-begin">N</span>im has a colorful and storied history.
+			While there is no definite timeline as to when Nim was created, there
+			are indications that a game similar to Nim called <span>捡石子</span>
+			(jiǎn-shízi), or <span>"picking stones"</span> was played in ancient
+			China.
+		</p>
+		<image class="rounded" src="Images/stone-nim-game.jpg" />
+		<p>European references to a game like Nim began to appear in the
+			16th century. The game was played with stones, marbles, sticks, or
+			anything players had available.</p>
+		<image class="rounded" src="Images/marbles.jpg" />
+		<image class="rounded" src="Images/matches.jpg" />
+		<p>
+			Today's game of Nim was named by <a
+				href="https://en.wikipedia.org/wiki/Charles_L._Bouton"
+				target="_blank">Dr. Charles L. Bouton</a> of Harvard University. In
+			1901, Dr. Bouton developed the theory of Nim that is still in use
+			today.
+		</p>
+		<h3>Mathematical Principals</h3>
+		<p>
+			<span class="p-begin">T</span>o understand Nim (and to ensure you win
+			every time), you should have a fundamental understanding of the
+			binary numbering system. Binary is a base-2 numbering system. It can
+			be described as on (1) and off (0). A binary number uses a radix
+			(number of unique digits) of 2. To write a number in binary, you must
+			know the value of the position within the binary number. Take a look
+			at the table below.
+		</p>
+		<table>
+			<tr>
+				<th>Binary</th>
+				<td>10000000<sub>2</sub></td>
+				<td>1000000<sub>2</sub></td>
+				<td>100000<sub>2</sub></td>
+				<td>10000<sub>2</sub></td>
+				<td>1000<sub>2</sub></td>
+				<td>100<sub>2</sub></td>
+				<td>10<sub>2</sub></td>
+				<td>1<sub>2</sub></td>
+			</tr>
+			<tr>
+				<th>Decimal</th>
+				<td>128</td>
+				<td>64</td>
+				<td>32</td>
+				<td>16</td>
+				<td>8</td>
+				<td>4</td>
+				<td>2</td>
+				<td>1</td>
+			</tr>
+		</table>
+		<p>
+			Each position in a binary number increments by double of the previous
+			position. In other words, reading from right to left, the first
+			position of a binary number is 1. The second is 2. The third is 4,
+			and so on. To show you are writing a number in binary, you should add
+			a subscripted "2" to the number. For example, to write the decimal
+			number 10 in binary, you would write 1010<sub>2</sub>. This is the
+			equivalent of writing 8 + 2 in decimal. The first position, 1, is 0
+			(off), so is not added. The second position, 2, is 1 (on), so is
+			added. The third position, 4, is 0 (off), so is not added. The fourth
+			position, 8, is 1 (on), so is added.
+		</p>
+		<p>Going back to Dr. Bouton from Harvard, he determined the
+			following for Nim:</p>
+		<ul>
+			<li><span style="font-weight: bold;">Fact 1:</span> If the
+				indicator of the current game position consists of all 0's, then any
+				move will result in an indicator value which does not consist of all
+				0's.</li>
+			<li><span style="font-weight: bold;">Fact 2:</span> If the
+				indicator of the current game position does not consist of all 0's,
+				then one can remove a number of stones from one of the piles so that
+				the new position obtained will have an indicator consisting of all
+				0's.</li>
+		</ul>
+		<img src="Images/question.png" />
+		<p>Suppose we have three piles of stones of size 37, 20, and 29.
+			We first compute the binary representation for each of these numbers:</p>
+		<div align="CENTER">
+			37 = 1 0 0 1 0 1<br /> 20 = 0 1 0 1 0 0<br /> 29 = 0 1 1 1 0 1
+		</div>
+		<p>Adding the columns of these binary numbers without carries
+			gives:</p>
+		<div align="CENTER">1 0 1 1 0 0</div>
+		<p>
+			This binary string is the indicator value of the position. It does
+			not consist of all zeros, and, thus, the first player has a winning
+			position. The question is, what move or moves can the first player
+			make to achieve the win? To answer this question we proceed as
+			follows:<br /> <br /> Locate the leftmost position with a 1 in the
+			indicator value's binary string, and find a pile which has a 1 in
+			this position of its binary representation (such a pile exists
+			because there are no carries in nim-addition). In this case there is
+			only one choice, the pile with 37 stones. Next we add (without
+			carries) the binary representations of the other piles:
+		</p>
+		<div align="CENTER">
+			0 1 0 1 0 0<br /> 0 1 1 1 0 1
+		</div>
+		<p>to get:</p>
+		<div align="CENTER">0 0 1 0 0 1.</div>
+		<p>The result is the string 0 0 1 0 0 1 which represents the
+			number 9. Thus, if the first pile had exactly 9 stones, the new
+			indicator would consist of all 0's. So we remove 37 - 9 = 28 stones
+			from the first pile. By doing this, we are left with piles of stones
+			of size 9, 20, and 29. When we write these numbers in binary we know
+			that the addition of 20 and 29 gives the indicator string above
+			(001001) which is 9, so when we add the binary string for 9 to the
+			indicator string for the sum of 20 and 29 we must get a string with
+			all 0's! The first player, "A" has given player "B" a position with
+			an indicator string of all 0's to move from. By Fact 1, any move "B"
+			makes results in an indicator string which is not all 0's and by
+			repeating the process just used above, "A" has a move that will again
+			give "B" a string with all 0's. "A" can win the game.</p>
+		<img src="Images/now-i-get-it.jpg" />
+		test
+		</main>
+		<footer>
+			Copyright &copy; 2017 NIM Game<br> <a
+				href="mailto:dela1@my.westga.edu">diane@ela.com</a>
+		</footer>
+	</div>
+</body>
+</html>
