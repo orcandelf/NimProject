@@ -25,7 +25,7 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 	 * 
 	 */
 	public ComputerPlayer() {
-		this.name = NAME;
-		this.sticksToTake = 0;
+		this.setName(NAME);
+		this.setSticksToTake(0);
 	}
 }
