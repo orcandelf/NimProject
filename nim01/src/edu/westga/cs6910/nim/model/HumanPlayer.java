@@ -20,7 +20,7 @@ public class HumanPlayer extends AbstractPlayer implements Player {
 	 * @ensure name().equals(name) && sticksRemoved() == 0
 	 */
 	public HumanPlayer(String name) {
-		this.name = name;
-		this.sticksToTake = 0;
+		this.setName(name);
+		this.setSticksToTake(0);
 	}
 }
