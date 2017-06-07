@@ -13,6 +13,9 @@ package edu.westga.cs6910.nim.model;
  * It removes 1 stick at a time.
  * This class was started by CS6910
  * 
+ * @author Diane Ela
+ * @version Jun 6, 2017
+ * 
  */
 public class ComputerPlayer implements Player {
 	private static final String NAME = "Simple computer";
