@@ -153,8 +153,9 @@ public class NimPane extends BorderPane {
 			// TODO: !Add the 2 radio buttons to this pane.
 						
 			//Adds the radio buttons to the pane
-			add(this.radComputerPlayer, 2, 1);
 			add(this.radHumanPlayer, 1, 1);
+			add(this.radComputerPlayer, 2, 1);
+
 		}
 		
 		/* 
