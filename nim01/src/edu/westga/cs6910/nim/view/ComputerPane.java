@@ -112,7 +112,7 @@ public class ComputerPane extends GridPane implements InvalidationListener {
 			if (!ComputerPane.this.theGame.isGameOver()) {
 				ComputerPane.this.theComputer.setPileForThisTurn(ComputerPane.this.theGame.getPile());
 				ComputerPane.this.theComputer.setNumberSticksToTake();
-				ComputerPane.this.lblNumberTaken.setText(Integer.toString(ComputerPane.this.theComputer.getSticksOnThisTurn()));
+				ComputerPane.this.lblNumberTaken.setText(Integer.toString(ComputerPane.this.theComputer.getSticksToTake()));
 				ComputerPane.this.theGame.play();
 			}
 		}
