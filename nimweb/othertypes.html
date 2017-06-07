@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+<title>Nim - Instructions</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device=width, initial-scale=1.0">
+<link rel="stylesheet" href="nim.css">
+<!--[if lt IE9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+	</script>
+	<![endif]-->
+</head>
+<body>
+	<div>
+		<header>
+			<h1>Shall We Play a Game?</h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href = "index.html">Home</a></li>
+				<li><a href = "instructions.html">How to Play</a></li>
+				<li><a class="active" href = "othertypes.html">Other Nim Examples</a></li>
+				<li><a href = "history.html">History of Nim</a></li>
+				<li><a href = "strategy.html">Nim Strategies</a></li>
+			</ul>
+		</nav>
+		<main>
+				<h3>Other Nim Examples</h3>
+		<p>
+			<span class="p-begin">T</span>here are actually several different types of Nim. Standard Nim is
+			played "misère", meaning that the player that takes the last
+			object loses the match.
+		</p>
+		<p>
+			Nim is played starting with piles or rows of objects. Players take turns taking 
+			any number of objects from one of the piles.
+		</p>
+		<p>For this example game, we will be using 16 objects in rows of 7, 5, 3, and 1.</p>
+		<table class="nim-table">
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+			</tr>
+		</table>
+		<p>Our two players are "Nancy" and "Bill". "Nancy" goes first. She
+			chooses to remove 2 from the row of 7.</p>
+		<table class="nim-table">
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+			</tr>
+		</table>
+		<p>"Bill" then takes all 5 from the row of 5.</p>
+		<table class="nim-table">
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+			</tr>
+		</table>
+		<p>"Nancy" then takes the object in row 1.</p>
+		<table class="nim-table">
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+			</tr>
+		</table>
+		<p>"Bill" then takes 3 from the row of 7,</p>
+		<table class="nim-table">
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+			</tr>
+		</table>
+		<p>"Nancy" takes all 3 objects from the row of 3.</p>
+		<table class="nim-table">
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="fill"></td>
+				<td class="fill"></td>
+			</tr>
+		</table>
+		<p>Even though we know the outcome now, we'll continue playing.
+			"Bill" takes 1 object from the row of 7.</p>
+		<table class="nim-table">
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="fill"></td>
+			</tr>
+		</table>
+		<p>Poor "Nancy" loses this game. She takes the last object.</p>
+		<table class="nim-table">
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="no-fill"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="no-fill"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+		</table>
+		<p>See, easy peasy! From these simple instructions, you can play
+			several versions of Nim like:</p>
+		<ul>
+			<li>Straight Nim: The winner is the player who takes the last
+				counter</li>
+			<li>The 21 Game: Rather than using counters or objects, use
+				numbers up to 21. The first player says "1" and each player in turn
+				increases the number by 1, 2, or 3, but may not exceed 21; the
+				player forced to say "21" loses.</li>
+			<li>Circular Nim: Objects are placed in a circle instead of in
+				piles. Players remove 1, 2, or 3 adjacent objects. The player who
+				chooses the last object(s) loses.</li>
+			<li>Greedy Nim: Players must chose objects from the pile with
+				the most objects.</li>
+			<li>Building Nim: Players build their piles one object at a time
+				before beginning game play.
+		</ul>
+		<p>
+		So, go play already!
+		</p>
+		<img class="larger" src="Images/play_nim.png" />
+		
+		</main>
+		<footer>
+			Copyright &copy; 2017 NIM Game<br> <a
+				href="mailto:dela1@my.westga.edu">diane@ela.com</a>
+		</footer>
+	</div>
+</body>
+</html>
