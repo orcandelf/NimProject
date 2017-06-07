@@ -122,8 +122,8 @@ public class NimPane extends BorderPane {
 		private NewGamePane(Game theGame) {
 			this.theGame = theGame;
 			
-			this.theHuman = this.theGame.getHumanPlayer();
-			this.theComputer = this.theGame.getComputerPlayer();
+			this.theHuman = (Player) this.theGame.getHumanPlayer();
+			this.theComputer = (Player) this.theGame.getComputerPlayer();
 			
 			this.buildPane();
 		}
