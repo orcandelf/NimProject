@@ -60,6 +60,7 @@ public class ComputerPane extends GridPane implements InvalidationListener {
 		this.btnTakeTurn = new Button("Take Turn");
 		this.btnTakeTurn.setOnAction(new TakeTurnListener());
 		this.add(this.btnTakeTurn, 0, 2);
+		this.setDisable(true);
 	}
 
 	@Override
@@ -111,6 +112,7 @@ public class ComputerPane extends GridPane implements InvalidationListener {
 			if (!ComputerPane.this.theGame.isGameOver()) {
 				ComputerPane.this.theComputer.setPileForThisTurn(ComputerPane.this.theGame.getPile());
 				ComputerPane.this.theComputer.setNumberSticksToTake();
+				ComputerPane.this.lblNumberTaken.setText(Integer.toString(ComputerPane.this.theComputer.getSticksOnThisTurn()));
 				ComputerPane.this.theGame.play();
 			}
 		}
