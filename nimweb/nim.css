@@ -93,6 +93,15 @@ img.larger {
 	min-width: 600px;
 }
 
+img.xlarge {
+	width: 1000px;
+	min-width: 800px;
+}
+
+img.numbers {
+	min-width: 800px;
+	}
+
 a {
 	color: #000000;
 	text-decoration: underline;
