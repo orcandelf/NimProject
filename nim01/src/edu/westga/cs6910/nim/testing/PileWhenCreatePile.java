@@ -4,16 +4,32 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import edu.westga.cs6910.nim.model.Pile;
+
+/**Test cases for the Pile class
+ * 
+ * @author Diane Ela
+ * @version Jun 11, 2017
+ *
+ */
 public class PileWhenCreatePile {
 
 	@Test
-	public void testRemoveSticks() {
-		fail("Not yet implemented");
+	public void testShouldProducePileWith1Stick() {
+		Pile oneStickPile = new Pile(1);
+		assertEquals("Pile size: 1", oneStickPile.toString());
 	}
 
 	@Test
-	public void testGetSticksLeft() {
-		fail("Not yet implemented");
+	public void testShouldProducePileWith10Sticks() {
+		Pile tenStickPile = new Pile(10);
+		assertEquals("Pile size: 10", tenStickPile.toString());
+	}
+	
+	@Test
+	public void testShouldProducePileWith100Sticks() {
+		Pile oneHundredStickPile = new Pile(100);
+		assertEquals("Pile size: 100", oneHundredStickPile.toString());
 	}
 
 }
