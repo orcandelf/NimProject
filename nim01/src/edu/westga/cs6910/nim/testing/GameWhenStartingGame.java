@@ -7,8 +7,17 @@ import edu.westga.cs6910.nim.model.Game;
 import edu.westga.cs6910.nim.model.HumanPlayer;
 import edu.westga.cs6910.nim.model.ComputerPlayer;
 
+/**
+ * 
+ * @author Diane Ela
+ * @version Jun 13, 2017
+ *
+ */
 public class GameWhenStartingGame {
 
+	/**
+	 * 
+	 */
 	@Test
 	public void testGameWithHumanNamedHuman() {
 		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
