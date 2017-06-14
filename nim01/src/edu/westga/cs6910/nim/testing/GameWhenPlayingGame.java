@@ -35,10 +35,10 @@ public class GameWhenPlayingGame {
 	}
 	
 	 /**
-	 * Tests playing a game with a human player as first player
+	 * Tests playing a game with a human player as first player taking 3 sticks
 	 */
 	@Test
-	public void testPlayGameWithHumanFirst() {
+	public void testPlayGameWithHumanFirstTaking3Sticks() {
 		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
 		final Player theHuman = (Player) newGame.getHumanPlayer();
 		Pile newPile = new Pile(7);
@@ -48,6 +48,22 @@ public class GameWhenPlayingGame {
 		newGame.play();
 		newGame.getCurrentPlayer().setPileForThisTurn(newPile);
 		assertEquals(newGame.getCurrentPlayer().getName() + ", " + newGame.getCurrentPlayer().getPileForThisTurn(), "Simple computer, Pile size: 4");
+	}
+	
+	 /**
+	 * Tests playing a game with a human player as first player taking 3 sticks
+	 */
+	@Test
+	public void testPlayGameWithHumanFirstTaking2Sticks() {
+		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
+		final Player theHuman = (Player) newGame.getHumanPlayer();
+		Pile newPile = new Pile(7);
+		newGame.startNewGame(theHuman);
+		theHuman.setPileForThisTurn(newPile);
+		theHuman.setNumberSticksToTake(2);
+		newGame.play();
+		newGame.getCurrentPlayer().setPileForThisTurn(newPile);
+		assertEquals(newGame.getCurrentPlayer().getName() + ", " + newGame.getCurrentPlayer().getPileForThisTurn(), "Simple computer, Pile size: 5");
 	}
 
 }
