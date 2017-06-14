@@ -101,7 +101,7 @@ public class Game implements Observable {
 	 * 
 	 * @return the computer Player
 	 */
-	public AbstractPlayer getComputerPlayer() {
+	public ComputerPlayer getComputerPlayer() {
 		return this.theComputer;
 	}
 	
