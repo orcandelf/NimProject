@@ -51,7 +51,7 @@ public class GameWhenPlayingGame {
 	}
 	
 	 /**
-	 * Tests playing a game with a human player as first player taking 3 sticks
+	 * Tests playing a game with a human player as first player taking 2 sticks
 	 */
 	@Test
 	public void testPlayGameWithHumanFirstTaking2Sticks() {
