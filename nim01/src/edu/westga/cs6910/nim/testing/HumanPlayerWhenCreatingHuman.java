@@ -13,7 +13,7 @@ import edu.westga.cs6910.nim.model.HumanPlayer;
  * @version Jun 13, 2017
  *
  */
-public class HumanWhenCreatingHuman {
+public class HumanPlayerWhenCreatingHuman {
 
 	/**
 	 * Tests name of human player
