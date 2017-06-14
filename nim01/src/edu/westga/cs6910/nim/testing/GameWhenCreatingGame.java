@@ -14,7 +14,7 @@ import edu.westga.cs6910.nim.model.ComputerPlayer;
  * @version Jun 13, 2017
  *
  */
-public class GameWhenStartingGame {
+public class GameWhenCreatingGame {
 
 	/**
 	 * Tests the creation of the human player in the Game constructor
