@@ -4,12 +4,14 @@ import edu.westga.cs6910.nim.model.Game;
 import edu.westga.cs6910.nim.model.Player;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 
 /**
@@ -23,9 +25,11 @@ import javafx.scene.layout.Pane;
 public class NimPane extends BorderPane {
 	private Game theGame;
 	private BorderPane pnContent;
+	private BorderPane pnMenu;
 	private HumanPane pnHumanPlayer;
 	private ComputerPane pnComputerPlayer;
 	private StatusPane pnGameInfo;
+	private MenuPane pnMenuBar;
 	private Pane pnChooseFirstPlayer;
 	
 	/**
@@ -41,6 +45,7 @@ public class NimPane extends BorderPane {
 		this.theGame = theGame;
 		
 		this.pnContent = new BorderPane();
+		this.pnMenu = new BorderPane();
 		
 		this.addFirstPlayerChooserPane(theGame);
 		
@@ -63,8 +68,10 @@ public class NimPane extends BorderPane {
 		
 		//Adds the computer player to the pane
 		this.addComputerPlayerChooserPane(theGame);
-
+		
+		this.addMenuBar();
 		this.setCenter(this.pnContent);
+		this.setTop(this.pnMenu);
 	}
 
 	/*
@@ -106,6 +113,15 @@ public class NimPane extends BorderPane {
 		this.pnChooseFirstPlayer = new NewGamePane(theGame);
 		topBox.getChildren().add(this.pnChooseFirstPlayer);
 		this.pnContent.setTop(topBox);
+	}
+	
+	private void addMenuBar() {
+		HBox menuBox = new HBox();
+		this.pnMenuBar = new MenuPane();
+		menuBox.getChildren().add(this.pnMenuBar);
+		this.pnMenu.setLeft(menuBox);
+		double menuHeight = menuBox.getHeight();
+		this.pnMenu.setMaxHeight(menuHeight);
 	}
 
 	/*
