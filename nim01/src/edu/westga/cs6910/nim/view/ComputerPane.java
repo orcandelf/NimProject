@@ -2,6 +2,7 @@ package edu.westga.cs6910.nim.view;
 
 import edu.westga.cs6910.nim.model.Game;
 import edu.westga.cs6910.nim.model.AbstractPlayer;
+import edu.westga.cs6910.nim.model.ComputerPlayer;
 //import edu.westga.cs6910.nim.view.HumanPane.TakeTurnListener;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
@@ -25,7 +26,7 @@ import javafx.scene.layout.GridPane;
 public class ComputerPane extends GridPane implements InvalidationListener {
 	private Game theGame;
 	private Label lblNumberTaken;
-	private AbstractPlayer theComputer;
+	private ComputerPlayer theComputer;
 	private Button btnTakeTurn;
 
 	/**
