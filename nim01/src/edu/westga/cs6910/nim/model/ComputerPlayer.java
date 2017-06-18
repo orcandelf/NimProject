@@ -44,6 +44,8 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 		} else {
 			this.setTheSticks(strategy);
 		}
+		this.setName(NAME);
+		this.setSticksToTake(0);
 	}
 
 	/**
