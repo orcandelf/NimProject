@@ -9,6 +9,7 @@ import edu.westga.cs6910.nim.model.Game;
 import edu.westga.cs6910.nim.model.HumanPlayer;
 import edu.westga.cs6910.nim.model.Pile;
 import edu.westga.cs6910.nim.model.Player;
+import edu.westga.cs6910.nim.model.strategy.CautiousStrategy;
 
 /** Test class to test the play method in the Game class
  * 
@@ -22,8 +23,9 @@ public class GameWhenPlayingGame {
 	 * Tests playing a game with a computer player as first player
 	 */
 	@Test
-	public void testPlayGameWithComputerFirst() {
-		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
+	public void testPlayGameWithComputerFirst() {		
+		CautiousStrategy strategy = new CautiousStrategy();
+		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer(strategy));
 		final Player theComputer = (Player) newGame.getComputerPlayer();
 		Pile newPile = new Pile(7);
 		newGame.startNewGame(theComputer);
@@ -39,7 +41,8 @@ public class GameWhenPlayingGame {
 	 */
 	@Test
 	public void testPlayGameWithHumanFirstTaking3Sticks() {
-		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
+		CautiousStrategy strategy = new CautiousStrategy();
+		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer(strategy));
 		final Player theHuman = (Player) newGame.getHumanPlayer();
 		Pile newPile = new Pile(7);
 		newGame.startNewGame(theHuman);
@@ -55,7 +58,8 @@ public class GameWhenPlayingGame {
 	 */
 	@Test
 	public void testPlayGameWithHumanFirstTaking2Sticks() {
-		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
+		CautiousStrategy strategy = new CautiousStrategy();
+		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer(strategy));
 		final Player theHuman = (Player) newGame.getHumanPlayer();
 		Pile newPile = new Pile(7);
 		newGame.startNewGame(theHuman);

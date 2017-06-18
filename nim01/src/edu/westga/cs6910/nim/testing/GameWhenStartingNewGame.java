@@ -5,6 +5,7 @@ import edu.westga.cs6910.nim.model.Game;
 import edu.westga.cs6910.nim.model.HumanPlayer;
 import edu.westga.cs6910.nim.model.ComputerPlayer;
 import edu.westga.cs6910.nim.model.Player;
+import edu.westga.cs6910.nim.model.strategy.CautiousStrategy;
 
 import org.junit.Test;
 
@@ -21,7 +22,8 @@ public class GameWhenStartingNewGame {
 	 */
 	@Test
 	public void testStartNewGameWithHuman() {
-		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
+		CautiousStrategy strategy = new CautiousStrategy();
+		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer(strategy));
 		final Player theHuman = (Player) newGame.getHumanPlayer();
 		newGame.startNewGame(theHuman);
 		assertEquals(newGame.getCurrentPlayer().getName() + "," + newGame.toString(), "Human, Pile size: 7");
@@ -32,7 +34,8 @@ public class GameWhenStartingNewGame {
 	 */
 	@Test
 	public void testStartNewGameWithComputer() {
-		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
+		CautiousStrategy strategy = new CautiousStrategy();
+		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer(strategy));
 		final Player theComputer = (Player) newGame.getComputerPlayer();
 		newGame.startNewGame(theComputer);
 		assertEquals(newGame.getCurrentPlayer().getName() + "," + newGame.toString(), "Simple computer, Pile size: 7");

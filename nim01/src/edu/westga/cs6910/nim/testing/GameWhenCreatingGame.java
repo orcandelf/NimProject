@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import edu.westga.cs6910.nim.model.Game;
 import edu.westga.cs6910.nim.model.HumanPlayer;
+import edu.westga.cs6910.nim.model.strategy.CautiousStrategy;
 import edu.westga.cs6910.nim.model.ComputerPlayer;
 
 /**
@@ -21,7 +22,8 @@ public class GameWhenCreatingGame {
 	 */
 	@Test
 	public void testGameWithHumanNamedHuman() {
-		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
+		CautiousStrategy strategy = new CautiousStrategy();
+		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer(strategy));
 		assertEquals(newGame.getHumanPlayer().getName(), "Human");
 	}
 	
@@ -30,7 +32,8 @@ public class GameWhenCreatingGame {
 	 */
 	@Test
 	public void testGameWithComputerName() {
-		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
+		CautiousStrategy strategy = new CautiousStrategy();
+		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer(strategy));
 		assertEquals(newGame.getComputerPlayer().getName(), "Simple computer");
 	}
 	
@@ -40,7 +43,8 @@ public class GameWhenCreatingGame {
 	 */
 	@Test
 	public void testGameStartingPile() {
-		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
+		CautiousStrategy strategy = new CautiousStrategy();
+		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer(strategy));
 		assertEquals(newGame.getPile().toString(), "Pile size: 7");
 	}
 	
@@ -49,7 +53,8 @@ public class GameWhenCreatingGame {
 	 */
 	@Test
 	public void testGameStickLeftStartingPile() {
-		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
+		CautiousStrategy strategy = new CautiousStrategy();
+		Game newGame = new Game(new HumanPlayer("Human"), new ComputerPlayer(strategy));
 		assertEquals(newGame.getSticksLeft(), 7);
 	}
 }
