@@ -1,6 +1,7 @@
 /**
  * 
  */
+
 package westga.cs6910.nim.model.strategy;
 
 /**
