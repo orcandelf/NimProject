@@ -25,6 +25,16 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 	
 	/**
 	 * Creates a new ComputerPlayer with the specified name.
+	 * 
+	 */
+	
+	public ComputerPlayer() {
+		this.setName(NAME);
+		this.setSticksToTake(0);
+	}
+	
+	/**
+	 * Creates a new ComputerPlayer with the specified name.
 	 * @param strategy the strategy for the game
 	 * 
 	 */
@@ -34,7 +44,5 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 		} else {
 			this.theSticks = strategy;
 		}
-		this.setName(NAME);
-		this.setSticksToTake(0);
 	}
 }
