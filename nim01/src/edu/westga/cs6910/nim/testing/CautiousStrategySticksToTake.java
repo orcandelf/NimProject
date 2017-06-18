@@ -1,6 +1,7 @@
 /**
  * 
  */
+
 package edu.westga.cs6910.nim.testing;
 
 import static org.junit.Assert.*;
@@ -10,6 +11,8 @@ import org.junit.Test;
 import westga.cs6910.nim.model.strategy.CautiousStrategy;
 
 /**
+ *Testing scenarious for the CautiousStrategy
+ * 
  * @author Diane Ela
  * @version Jun 18, 2017
  *
@@ -17,7 +20,7 @@ import westga.cs6910.nim.model.strategy.CautiousStrategy;
 public class CautiousStrategySticksToTake {
 
 	/**
-	 * Test method for {@link westga.cs6910.nim.model.strategy.CautiousStrategy#howManySticks(int)}.
+	 * Tests CautiousStrategy when there are 6 sticks
 	 */
 	@Test
 	public void testHowManySticksWhen6Sticks() {
@@ -27,7 +30,7 @@ public class CautiousStrategySticksToTake {
 	}
 	
 	/**
-	 * Test method for {@link westga.cs6910.nim.model.strategy.CautiousStrategy#howManySticks(int)}.
+	 * Tests CautiousStrategy when there are 3 sticks
 	 */
 	@Test
 	public void testHowManySticksWhen3Sticks() {
@@ -37,7 +40,7 @@ public class CautiousStrategySticksToTake {
 	}
 	
 	/**
-	 * Test method for {@link westga.cs6910.nim.model.strategy.CautiousStrategy#howManySticks(int)}.
+	 * Tests CautiousStrategy when there are 0 sticks
 	 */
 	@Test
 	public void testHowManySticksWhen0Sticks() {
