@@ -2,7 +2,7 @@
  * 
  */
 
-package westga.cs6910.nim.model.strategy;
+package edu.westga.cs6910.nim.model.strategy;
 
 /**
  *Class for the cautious strategy where computer takes 1 stick only

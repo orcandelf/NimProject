@@ -2,7 +2,7 @@
  * 
  */
 
-package westga.cs6910.nim.model.strategy;
+package edu.westga.cs6910.nim.model.strategy;
 
 /** 
  * Defines the number of sticks the computer player will take on it's turn depending

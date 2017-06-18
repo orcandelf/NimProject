@@ -1,5 +1,7 @@
 package edu.westga.cs6910.nim.model;
 
+import edu.westga.cs6910.nim.
+
 // TODO: Classes ComputerPlayer and HumanPlayer share most of their code.
 //		 Refactor their code:
 // 		 1. Create abstract base class AbstractPlayer to implement the
@@ -19,6 +21,7 @@ package edu.westga.cs6910.nim.model;
  */
 public class ComputerPlayer extends AbstractPlayer implements Player {
 	private static final String NAME = "Simple computer";
+	private static final NumberOfSticksStragegy theSticks;
 	
 	/**
 	 * Creates a new ComputerPlayer with the specified name.
