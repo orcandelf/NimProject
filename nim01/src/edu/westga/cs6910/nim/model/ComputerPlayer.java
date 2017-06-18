@@ -65,4 +65,15 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 	public void setTheSticks(NumberOfSticksStrategy theSticks) {
 		this.theSticks = theSticks;
 	}
+	
+	/**
+	 * Determines the number of sticks to take based on the strategy chosen
+	 * 
+	 * Postcondition: sticksOnThisTurn() >= 1 && sticksOnThisTurn() <=
+	 *										Math.min(pileForThisTurn.sticksLeft()-1,
+	 *										Game.MAX_STICKS_PER_TURN
+	 */
+	public void setNumberOfSticksToTake() {
+		this.theSticks.howManySticks(super.getPileForThisTurn().getSticksLeft());
+	}
 }
