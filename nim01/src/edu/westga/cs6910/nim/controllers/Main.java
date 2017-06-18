@@ -20,8 +20,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("CS6910 - Simple Nim");
-		CautiousStrategy strategy = new CautiousStrategy();
-		Game theGame = new Game(new HumanPlayer("Human"), new ComputerPlayer(strategy));
+		Game theGame = new Game(new HumanPlayer("Human"), new ComputerPlayer());
 
 		NimPane root = new NimPane(theGame);
 		Scene scene = new Scene(root, 700, 200);

@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import edu.westga.cs6910.nim.model.ComputerPlayer;
-import edu.westga.cs6910.nim.model.strategy.CautiousStrategy;
 
 /**
  * Class to test the ComputerPlayer class
@@ -21,8 +20,7 @@ public class ComputerPlayerWhenCreatingComputer {
 	 */
 	@Test
 	public void testComputerPlayerName() {
-		CautiousStrategy strategy = new CautiousStrategy();
-		ComputerPlayer computer = new ComputerPlayer(strategy);
+		ComputerPlayer computer = new ComputerPlayer();
 		assertEquals(computer.getName(), "Simple computer");
 	}
 	
@@ -31,8 +29,7 @@ public class ComputerPlayerWhenCreatingComputer {
 	 */
 	@Test
 	public void testComputerPlayerDefaultSticks() {
-		CautiousStrategy strategy = new CautiousStrategy();
-		ComputerPlayer computer = new ComputerPlayer(strategy);
+		ComputerPlayer computer = new ComputerPlayer();
 		assertEquals(computer.getSticksToTake(), 0);
 	}
 	
@@ -41,8 +38,7 @@ public class ComputerPlayerWhenCreatingComputer {
 	 */
 	@Test
 	public void testComputerPlayerDefaultSticksToTake() {
-		CautiousStrategy strategy = new CautiousStrategy();
-		ComputerPlayer computer = new ComputerPlayer(strategy);
+		ComputerPlayer computer = new ComputerPlayer();
 		computer.setNumberSticksToTake();
 		assertEquals(computer.getSticksToTake(), 1);
 	}

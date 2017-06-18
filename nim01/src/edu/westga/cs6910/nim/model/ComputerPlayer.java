@@ -42,7 +42,25 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 		if (strategy.equals(null)) {
 			throw new IllegalArgumentException("Strategy is null.");
 		} else {
-			this.theSticks = strategy;
+			this.setTheSticks(strategy);
 		}
+	}
+
+	/**
+	 * Gets the number of sticks
+	 * 
+	 * @return this.theSticks returns number of sticks
+	 */
+	public NumberOfSticksStrategy getTheSticks() {
+		return this.theSticks;
+	}
+
+	/**
+	 * Sets the number of sticks
+	 * 
+	 * @param theSticks the number of sticks
+	 */
+	public void setTheSticks(NumberOfSticksStrategy theSticks) {
+		this.theSticks = theSticks;
 	}
 }
