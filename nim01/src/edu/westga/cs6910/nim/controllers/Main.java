@@ -3,7 +3,6 @@ package edu.westga.cs6910.nim.controllers;
 import edu.westga.cs6910.nim.model.ComputerPlayer;
 import edu.westga.cs6910.nim.model.Game;
 import edu.westga.cs6910.nim.model.HumanPlayer;
-import edu.westga.cs6910.nim.model.strategy.CautiousStrategy;
 import edu.westga.cs6910.nim.view.NimPane;
 import javafx.application.Application;
 import javafx.scene.Scene;
