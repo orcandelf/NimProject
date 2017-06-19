@@ -1,5 +1,6 @@
 package edu.westga.cs6910.nim.view;
 
+import edu.westga.cs6910.nim.model.ComputerPlayer;
 import edu.westga.cs6910.nim.model.Game;
 import edu.westga.cs6910.nim.model.Player;
 import javafx.event.ActionEvent;
