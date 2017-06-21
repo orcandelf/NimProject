@@ -148,7 +148,7 @@ public class Game implements Observable {
 	@Override
 	public String toString() {
 		if (!this.isGameOver()) {
-			return " Pile size: " + this.thePile.getSticksLeft();
+			return " Pile size: " + this.thePile.getSticksLeft() + "\nStrategy:\n" + this.theComputer.getTheStrategy();
 		}
 		
 		String result = "Game over! Winner: ";

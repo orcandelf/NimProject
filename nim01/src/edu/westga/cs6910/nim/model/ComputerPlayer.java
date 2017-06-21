@@ -73,8 +73,14 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 	 *										Math.min(pileForThisTurn.sticksLeft()-1,
 	 *										Game.MAX_STICKS_PER_TURN
 	 */
-	public void setNumberOfSticksToTake(Pile thePile) {
-		this.theStrategy.howManySticks(thePile.getSticksLeft());
+//	public void setNumberOfSticksToTake() {
+//		this.theStrategy.howManySticks(this.getPileForThisTurn().getSticksLeft());
+//		
+//	}
+	
+	public void setSticksToTake() {
+		this.theStrategy.howManySticks(this.getPileForThisTurn().getSticksLeft());
+
 	}
 	
 	/**
