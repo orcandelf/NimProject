@@ -6,7 +6,8 @@ package edu.westga.cs6910.nim.model.strategy;
 
 import edu.westga.cs6910.nim.model.Game;
 
-/**
+/**Random strategy for the computer
+ * 
  * @author Diane Ela
  * @version Jun 18, 2017
  *
