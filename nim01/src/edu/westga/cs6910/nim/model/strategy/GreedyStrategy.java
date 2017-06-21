@@ -22,7 +22,7 @@ public class GreedyStrategy implements NumberOfSticksStrategy {
 	public int howManySticks(int pileSize) {
 		int sticksToTake = 0;
 		if (pileSize > 0) {
-			sticksToTake = Game.MAX_STICKS_PER_TURN;
+			sticksToTake = Math.min(pileSize - 1, Game.MAX_STICKS_PER_TURN);
 		}
 		return sticksToTake;
 	}
