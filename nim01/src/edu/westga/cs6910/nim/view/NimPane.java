@@ -2,10 +2,19 @@ package edu.westga.cs6910.nim.view;
 
 import edu.westga.cs6910.nim.model.Game;
 import edu.westga.cs6910.nim.model.Player;
+import edu.westga.cs6910.nim.model.strategy.CautiousStrategy;
+import edu.westga.cs6910.nim.model.strategy.GreedyStrategy;
+import edu.westga.cs6910.nim.model.strategy.RandomStrategy;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -27,7 +36,6 @@ public class NimPane extends BorderPane {
 	private HumanPane pnHumanPlayer;
 	private ComputerPane pnComputerPlayer;
 	private StatusPane pnGameInfo;
-	private MenuPane pnMenuBar;
 	private Pane pnChooseFirstPlayer;
 	
 	/**
@@ -116,12 +124,73 @@ public class NimPane extends BorderPane {
 	 */
 	private void addMenuBar() {
 		HBox menuBox = new HBox();
-		this.pnMenuBar = new MenuPane();
-		menuBox.getChildren().add(this.pnMenuBar);
+		menuBox.getChildren().add(this.mBar());
 		this.pnMenu.setLeft(menuBox);
-		
 		double menuHeight = menuBox.getHeight();
 		this.pnMenu.setMaxHeight(menuHeight);
+	}
+	
+	private MenuBar mBar() {
+		MenuBar mBar = new MenuBar();
+		mBar.getMenus().add(this.fileMenu());
+		mBar.getMenus().add(this.strategyMenu());
+		return mBar;
+	}
+	
+	private Menu fileMenu() {
+		Menu fileMenu = new Menu("_File");
+		fileMenu.setMnemonicParsing(true);
+		MenuItem exit = new MenuItem("E_xit");
+		exit.setMnemonicParsing(true);
+		exit.setAccelerator(new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_DOWN));
+		exit.setOnAction(new ExitProgram());
+		fileMenu.getItems().add(exit);
+		return fileMenu;
+	}
+	
+	private Menu strategyMenu() {
+		Menu strategyMenu = new Menu("_Strategy");
+		MenuItem cautious = new MenuItem("_Cautious");
+		MenuItem greedy = new MenuItem("_Greedy");
+		MenuItem random = new MenuItem("_Random");
+		strategyMenu.getItems().add(cautious);
+		cautious.setOnAction(new CautiousComputer());
+		strategyMenu.getItems().add(greedy);
+		greedy.setOnAction(new GreedyComputer());
+		strategyMenu.getItems().add(random);
+		random.setOnAction(new RandomComputer());
+		return strategyMenu;
+	}
+	
+	private class ExitProgram implements EventHandler<ActionEvent> {
+		@Override
+		public void handle(ActionEvent arg0) {
+			System.exit(0);
+		}
+	}
+	
+	private class CautiousComputer implements EventHandler<ActionEvent> {
+		@Override
+		public void handle(ActionEvent arg0) {
+			CautiousStrategy cautious = new CautiousStrategy();
+			NimPane.this.theGame.getComputerPlayer().setStrategy(cautious);
+		}
+	}
+	
+	private class GreedyComputer implements EventHandler<ActionEvent> {
+		@Override
+		public void handle(ActionEvent arg0) {
+			GreedyStrategy greedy = new GreedyStrategy();
+			NimPane.this.theGame.getComputerPlayer().setStrategy(greedy);
+		}
+	}
+	
+	private class RandomComputer implements EventHandler<ActionEvent> {
+		@Override
+		public void handle(ActionEvent arg0) {
+			RandomStrategy random = new RandomStrategy();
+			NimPane.this.theGame.getComputerPlayer().setStrategy(random);
+		}
 	}
 
 	/*
@@ -211,5 +280,6 @@ public class NimPane extends BorderPane {
 				NimPane.this.theGame.startNewGame(NewGamePane.this.theHuman);
 			}
 		}
+		
 	}
 }
