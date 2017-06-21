@@ -119,6 +119,7 @@ public class NimPane extends BorderPane {
 		this.pnMenuBar = new MenuPane();
 		menuBox.getChildren().add(this.pnMenuBar);
 		this.pnMenu.setLeft(menuBox);
+		
 		double menuHeight = menuBox.getHeight();
 		this.pnMenu.setMaxHeight(menuHeight);
 	}
