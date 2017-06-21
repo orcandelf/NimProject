@@ -21,6 +21,6 @@ public class HumanPlayer extends AbstractPlayer implements Player {
 	 */
 	public HumanPlayer(String name) {
 		this.setName(name);
-		this.setSticksToTake(0);
+		this.setNumberSticksToTake(0);
 	}
 }

@@ -6,6 +6,7 @@ package edu.westga.cs6910.nim.view;
 
 import edu.westga.cs6910.nim.model.ComputerPlayer;
 import edu.westga.cs6910.nim.model.strategy.CautiousStrategy;
+import edu.westga.cs6910.nim.model.strategy.RandomStrategy;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
@@ -58,6 +59,7 @@ public class MenuPane extends GridPane {
 		cautious.setOnAction(new CautiousGame());
 		MenuItem greedy = new MenuItem("_Greedy");
 		MenuItem random = new MenuItem("_Random");
+		random.setOnAction(new RandomGame());
 		strategyMenu.getItems().add(cautious);
 		strategyMenu.getItems().add(greedy);
 		strategyMenu.getItems().add(random);
@@ -75,8 +77,17 @@ public class MenuPane extends GridPane {
 		@Override
 		public void handle(ActionEvent arg0) {
 			CautiousStrategy cautious = new CautiousStrategy();
-			ComputerPlayer computer = new ComputerPlayer();
+			ComputerPlayer computer = new ComputerPlayer(cautious);
 			computer.setStrategy(cautious);
+		}
+	}
+	
+	private class RandomGame implements EventHandler<ActionEvent> {
+		@Override
+		public void handle(ActionEvent arg0) {
+			RandomStrategy random = new RandomStrategy();
+			ComputerPlayer computer = new ComputerPlayer(random);
+			computer.setStrategy(random);
 		}
 	}
 }

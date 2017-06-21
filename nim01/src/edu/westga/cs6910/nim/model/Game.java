@@ -46,9 +46,7 @@ public class Game implements Observable {
 	public Game(HumanPlayer theHuman, ComputerPlayer theComputer) {
 		this.theHuman = theHuman;
 		this.theComputer = theComputer;
-
 		this.currentPlayerObject = new SimpleObjectProperty<Player>();
-		
 		this.thePile = new Pile(INITIAL_PILE_SIZE);
 	}
 

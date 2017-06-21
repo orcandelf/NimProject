@@ -21,7 +21,7 @@ import edu.westga.cs6910.nim.model.strategy.*;
  */
 public class ComputerPlayer extends AbstractPlayer implements Player {
 	private static final String NAME = "Simple computer";
-	private NumberOfSticksStrategy theSticks;
+	private NumberOfSticksStrategy theStrategy;
 	
 	/**
 	 * Creates a new ComputerPlayer with the specified name.
@@ -42,7 +42,7 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 		if (strategy.equals(null)) {
 			throw new IllegalArgumentException("Strategy is null.");
 		} else {
-			this.setTheSticks(strategy);
+			this.setTheStrategy(strategy);
 		}
 		this.setName(NAME);
 		this.setSticksToTake(0);
@@ -53,17 +53,17 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 	 * 
 	 * @return this.theSticks returns number of sticks
 	 */
-	public NumberOfSticksStrategy getTheSticks() {
-		return this.theSticks;
+	public NumberOfSticksStrategy getTheStrategy() {
+		return this.theStrategy;
 	}
 
 	/**
 	 * Sets the number of sticks
 	 * 
-	 * @param theSticks the number of sticks
+	 * @param strategy the number of sticks
 	 */
-	public void setTheSticks(NumberOfSticksStrategy theSticks) {
-		this.theSticks = theSticks;
+	public void setTheStrategy(NumberOfSticksStrategy strategy) {
+		this.theStrategy = strategy;
 	}
 	
 	/**
@@ -73,8 +73,8 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 	 *										Math.min(pileForThisTurn.sticksLeft()-1,
 	 *										Game.MAX_STICKS_PER_TURN
 	 */
-	public void setNumberOfSticksToTake() {
-		this.theSticks.howManySticks(super.getPileForThisTurn().getSticksLeft());
+	public void setNumberOfSticksToTake(Pile thePile) {
+		this.theStrategy.howManySticks(thePile.getSticksLeft());
 	}
 	
 	/**
@@ -86,6 +86,6 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 	 * Postcondition: strategy determines number of sticks to take
 	 */
 	public void setStrategy(NumberOfSticksStrategy strategy) {
-		this.theSticks = strategy;
+		this.setTheStrategy(strategy);
 	}
 }
