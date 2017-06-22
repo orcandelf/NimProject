@@ -42,7 +42,7 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 		if (strategy.equals(null)) {
 			throw new IllegalArgumentException("Strategy is null.");
 		} else {
-			this.setTheStrategy(strategy);
+			this.theStrategy = strategy;
 		}
 		this.setName(NAME);
 		this.setSticksToTake(0);
@@ -58,29 +58,15 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 	}
 
 	/**
-	 * Sets the number of sticks
-	 * 
-	 * @param strategy the number of sticks
-	 */
-	public void setTheStrategy(NumberOfSticksStrategy strategy) {
-		this.theStrategy = strategy;
-	}
-	
-	/**
 	 * Determines the number of sticks to take based on the strategy chosen
 	 * 
 	 * Postcondition: sticksOnThisTurn() >= 1 && sticksOnThisTurn() <=
 	 *										Math.min(pileForThisTurn.sticksLeft()-1,
 	 *										Game.MAX_STICKS_PER_TURN
 	 */
-//	public void setNumberOfSticksToTake() {
-//		this.theStrategy.howManySticks(this.getPileForThisTurn().getSticksLeft());
-//		
-//	}
-	
-	public void setSticksToTake() {
+	public void setNumberOfSticksToTake() {
 		this.theStrategy.howManySticks(this.getPileForThisTurn().getSticksLeft());
-
+		
 	}
 	
 	/**
@@ -92,6 +78,6 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 	 * Postcondition: strategy determines number of sticks to take
 	 */
 	public void setStrategy(NumberOfSticksStrategy strategy) {
-		this.setTheStrategy(strategy);
+		this.theStrategy = strategy;
 	}
 }
