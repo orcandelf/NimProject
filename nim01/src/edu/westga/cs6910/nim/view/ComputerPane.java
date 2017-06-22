@@ -1,6 +1,7 @@
 package edu.westga.cs6910.nim.view;
 
 import edu.westga.cs6910.nim.model.Game;
+import edu.westga.cs6910.nim.model.strategy.RandomStrategy;
 import edu.westga.cs6910.nim.model.ComputerPlayer;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
@@ -22,7 +23,7 @@ import javafx.scene.layout.GridPane;
  */
 public class ComputerPane extends GridPane implements InvalidationListener {
 	private Game theGame;
-	private Label lblNumberTaken;
+	private final Label lblNumberTaken;
 	private ComputerPlayer theComputer;
 	private Button btnTakeTurn;
 
@@ -40,6 +41,7 @@ public class ComputerPane extends GridPane implements InvalidationListener {
 		this.theGame.addListener(this);
 		
 		this.theComputer = this.theGame.getComputerPlayer();
+		this.lblNumberTaken = new Label("");
 		
 		this.buildPane();
 	}
@@ -52,13 +54,19 @@ public class ComputerPane extends GridPane implements InvalidationListener {
 		
 		this.add(new Label("Number of sticks taken: "), 0, 1);
 		
-		this.lblNumberTaken = new Label(Integer.toString(this.theComputer.getSticksOnThisTurn()));
+		this.lblNumberTaken.setText("0");
 		this.add(this.lblNumberTaken, 1, 1);
 
 		this.btnTakeTurn = new Button("Take Turn");
 		this.btnTakeTurn.setOnAction(new TakeTurnListener());
 		this.add(this.btnTakeTurn, 0, 2);
 		this.setDisable(true);
+	}
+	
+	private void setLabel() {
+		if (this.theGame.getSticksLeft() != Game.INITIAL_PILE_SIZE) {
+			this.lblNumberTaken.setText(Integer.toString(this.theComputer.getSticksOnThisTurn()));
+		}
 	}
 
 	@Override
@@ -75,9 +83,9 @@ public class ComputerPane extends GridPane implements InvalidationListener {
 			// sticks taken by the computer player.
 			
 			//Updates the computer pane label with the number of sticks taken
-			this.lblNumberTaken = new Label(Integer.toString(this.theComputer.getSticksOnThisTurn()));
-
+			this.setLabel();
 		} 
+		
 		// TODO: !Disable if it is no longer the computer's turn, enable it if
 		// it is the computer's turn
 		
@@ -109,9 +117,19 @@ public class ComputerPane extends GridPane implements InvalidationListener {
 			//Sets the computer's pile count and the number of sticks the computer takes and plays a move
 			if (!ComputerPane.this.theGame.isGameOver()) {
 				ComputerPane.this.theComputer.setPileForThisTurn(ComputerPane.this.theGame.getPile());
-				ComputerPane.this.theComputer.setNumberSticksToTake();
+				ComputerPane.this.theComputer.setNumberSticksToTake(ComputerPane.this.theComputer.getSticksToTake());
+				ComputerPane.this.lblNumberTaken.setText("");
 				ComputerPane.this.lblNumberTaken.setText(Integer.toString(ComputerPane.this.theComputer.getSticksToTake()));
 				ComputerPane.this.theGame.play();
+				this.checkStrategy();
+			}
+		}
+		
+		private void checkStrategy() {
+			if (ComputerPane.this.theGame.getComputerPlayer().getTheStrategy().toString().contains("RandomStrategy")) {
+				RandomStrategy random = new RandomStrategy();
+				ComputerPane.this.theGame.getComputerPlayer().setStrategy(random);
+				ComputerPane.this.theGame.getComputerPlayer().setSticksToTake(ComputerPane.this.theGame.getComputerPlayer().getTheStrategy().howManySticks(ComputerPane.this.theGame.getPile().getSticksLeft()));
 			}
 		}
 	}
