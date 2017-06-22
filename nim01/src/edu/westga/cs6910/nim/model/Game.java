@@ -15,11 +15,11 @@ import javafx.beans.property.SimpleObjectProperty;
 
 public class Game implements Observable {
 	/** Constant to define the initial pile size */
-	public static final int INITIAL_PILE_SIZE = 7;
+	public static final int INITIAL_PILE_SIZE = 30;
 	
 	/** Constant to define the maximum number of sticks to be
 	 *  removed per turn */
-	public static final int MAX_STICKS_PER_TURN = 3;
+	public static final int MAX_STICKS_PER_TURN = 4;
 
 	private HumanPlayer theHuman;
 	private ComputerPlayer theComputer;
@@ -148,7 +148,7 @@ public class Game implements Observable {
 	@Override
 	public String toString() {
 		if (!this.isGameOver()) {
-			return " Pile size: " + this.thePile.getSticksLeft() + "\nStrategy:\n" + this.theComputer.getTheStrategy();
+			return " Pile size: " + this.thePile.getSticksLeft();
 		}
 		
 		String result = "Game over! Winner: ";
