@@ -21,9 +21,9 @@ public class RandomStrategy implements NumberOfSticksStrategy {
 	public int howManySticks(int pileSize) {
 		int sticksToTake = 0;
 		if (pileSize > 0) {
-			int min = 1;
-			int max = Math.min(pileSize - 1, Game.MAX_STICKS_PER_TURN);
-			sticksToTake = (int) (min + (Math.random() * (max - min)));
+			double min = Math.ceil(1.0);
+			double max = Math.floor(Game.MAX_STICKS_PER_TURN);
+			sticksToTake = (int) Math.ceil((Math.random() * (max - min + 1)));
 		}
 		return sticksToTake;
 	}
