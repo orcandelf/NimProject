@@ -41,7 +41,7 @@ public class ComputerPane extends GridPane implements InvalidationListener {
 		this.theGame.addListener(this);
 		
 		this.theComputer = this.theGame.getComputerPlayer();
-		this.lblNumberTaken = new Label("");
+		this.lblNumberTaken = new Label("0");
 		
 		this.buildPane();
 	}
