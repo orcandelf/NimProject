@@ -45,7 +45,7 @@ public class ComputerPlayer extends AbstractPlayer implements Player {
 			this.theStrategy = strategy;
 		}
 		this.setName(NAME);
-		this.setSticksToTake(0);
+		this.setSticksToTake(this.theStrategy.howManySticks(Game.INITIAL_PILE_SIZE));
 	}
 
 	/**
