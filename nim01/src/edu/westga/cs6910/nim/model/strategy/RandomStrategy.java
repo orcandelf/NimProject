@@ -14,8 +14,10 @@ import edu.westga.cs6910.nim.model.Game;
  */
 public class RandomStrategy implements NumberOfSticksStrategy {
 
-	/* (non-Javadoc)
-	 * @see edu.westga.cs6910.nim.model.strategy.NumberOfSticksStrategy#howManySticks(int)
+	/**
+	 *  RandomStrategy returns a number of sticks from 1 to the MAX_STICKS_PER_TURN, inclusive
+	 * 
+	 * @return sticksToTake Returns the number of sticks to take
 	 */
 	@Override
 	public int howManySticks(int pileSize) {
