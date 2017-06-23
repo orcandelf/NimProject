@@ -52,7 +52,19 @@
 		<p>
 		When it's the human's turn, choose the number of sticks the human takes from the pile (1 to 3) and
 		select "Take Sticks".
-		When it's the computer's turn, select "Take Turn". One stick will be removed from the pile.
+		<p>
+		The computer has 3 strategies of play: cautious, random, and greedy.
+		<ul>
+			<li>Cautious - only one stick is removed from the pile</li>
+			<li>Random - a random number of sticks between one and the maximun number of sticks able to be removed are removed from the pile</li>
+			<li>Greedy - the maximum number of sticks is always removed from the pile</li>
+		</ul>
+		You (the player) are able to select the play type from the Strategy drop down menu. This option is chosen after chosing the first player. 
+		If no option is chosen, the computer starts as a cautious player.
+		<h4>Computer Strategies</h4>
+		<img class="xlarge" src="Images/Strategy.png">	
+		<p>
+		When it's the computer's turn, select "Take Turn". The computer will remove a number of sticks from the pile based on the strategy of the game.
 		Play continues until there is one stick left. The player that leaves the last stick in the pile WINS the game!
 		<h4>We Have a Winner!</h4>
 		<img class="xlarge" src = "Images/Winner.png">
