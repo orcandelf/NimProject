@@ -87,6 +87,7 @@ public class HumanPane extends GridPane implements InvalidationListener {
 	}
 
 	private class TakeTurnListener implements EventHandler<ActionEvent> {
+		
 		/* 
 		 * Tells the Game to have its current player (i.e., the human Player)
 		 * take its turn.	
@@ -95,11 +96,13 @@ public class HumanPane extends GridPane implements InvalidationListener {
 		 */
 		@Override
 		public void handle(ActionEvent event) {
+			ComputerPane computer = new ComputerPane(HumanPane.this.theGame);
 			if (!HumanPane.this.theGame.isGameOver()) {
 				HumanPane.this.theHuman.setPileForThisTurn(HumanPane.this.theGame.getPile());
 				HumanPane.this.theHuman.setNumberSticksToTake((int) HumanPane.this.cmbNumberToTake
 						.getValue());
 				HumanPane.this.theGame.play();
+				computer.takeTurn();
 			}
 		}
 	}
