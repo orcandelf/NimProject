@@ -258,6 +258,7 @@ public class NimPane extends BorderPane {
 				NimPane.this.pnComputerPlayer.setDisable(false);
 				NimPane.this.pnChooseFirstPlayer.setDisable(true);
 				NimPane.this.theGame.startNewGame(NewGamePane.this.theComputer);
+				NimPane.this.pnComputerPlayer.takeTurn();
 			}
 		}
 

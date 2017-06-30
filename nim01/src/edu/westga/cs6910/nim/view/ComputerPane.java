@@ -5,8 +5,14 @@ import edu.westga.cs6910.nim.model.strategy.RandomStrategy;
 import edu.westga.cs6910.nim.model.ComputerPlayer;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * Defines the panel that lets the user tell the computer player to take its
@@ -120,6 +126,7 @@ public class ComputerPane extends GridPane implements InvalidationListener {
 			ComputerPane.this.lblNumberTaken.setText(Integer.toString(ComputerPane.this.theComputer.getSticksToTake()));
 			ComputerPane.this.theGame.play();
 			this.checkStrategy();
+			this.turnPopup().show();
 		}
 	}
 
@@ -130,5 +137,18 @@ public class ComputerPane extends GridPane implements InvalidationListener {
 			ComputerPane.this.theGame.getComputerPlayer().setSticksToTake(ComputerPane.this.theGame.getComputerPlayer()
 					.getTheStrategy().howManySticks(ComputerPane.this.theGame.getPile().getSticksLeft()));
 		}
+	}
+	
+	private Stage turnPopup() {
+		Stage turnPopup = new Stage();
+		turnPopup.initModality(Modality.APPLICATION_MODAL);
+		Label turnLabel = new Label("The computer is taking it's turn");
+		turnLabel.setFont(new Font("Arial", 16));
+		VBox turnLayout = new VBox(10);
+		turnLayout.getChildren().add(turnLabel);
+		turnLayout.setAlignment(Pos.CENTER);
+		Scene turnScene = new Scene(turnLayout, 400, 100);
+		turnPopup.setScene(turnScene);
+		return turnPopup;
 	}
 }
